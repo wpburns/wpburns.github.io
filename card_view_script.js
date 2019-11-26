@@ -12,7 +12,7 @@ $(function() {
 
 $.ajax({
     type: "GET",
-    url: "../test_metadata.csv",
+    url: "test_metadata.csv",
     success: function (data) {
         $('.cards-table').append(tableHeaders(Papa.parse(data).data));
         $('.cards-table').append(tableContents(Papa.parse(data).data));
