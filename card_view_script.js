@@ -1,14 +1,16 @@
 var myHilitor = new Hilitor(".cards-table"); // id of the element to parse
 
 $(function() {
-    $("#myInput").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $(".cards-table > tbody > tr").filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-            myHilitor.apply(value);
-            // highlightText(value);
-        });
-        updateResults();
+    $("#myInput").on("keypress", function(e) {
+        if(e.which == 13) {
+            var value = $(this).val().toLowerCase();
+            $(".cards-table > tbody > tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                myHilitor.apply(value);
+                // highlightText(value);
+            });
+            updateResults();
+        }
     });
 });
 
