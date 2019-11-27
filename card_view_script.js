@@ -6,13 +6,29 @@ $(function() {
         $(".cards-table > tbody > tr").filter(function() {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
             myHilitor.apply(value);
+            // highlightText(value);
         });
+        updateResults();
     });
 });
 
+function highlightText(term){
+    var src_str = $(".cards-table > tbody > tr").html();
+    term = term.replace(/(\s+)/,"(<[^>]+>)*$1(<[^>]+>)*");
+    var pattern = new RegExp("("+term+")", "gi");
+
+    src_str = src_str.replace(pattern, "<mark>$1</mark>");
+    src_str = src_str.replace(/(<mark>[^<>]*)((<[^>]+>)+)([^<>]*<\/mark>)/,"$1</mark>$2<mark>$4");
+
+    $(".cards-table > tbody > tr").html(src_str);
+}
+function updateResults(){
+    $('.results').text($('tr:visible').length + ' Images Found');
+}
+
 $.ajax({
     type: "GET",
-    url: "test_metadata.csv",
+    url: "../test_metadata.csv",
     success: function (data) {
         $('.cards-table').append(tableHeaders(Papa.parse(data).data));
         $('.cards-table').append(tableContents(Papa.parse(data).data));
@@ -28,8 +44,10 @@ function tableContents(tableData) {
         $(rowData).each(function (j, cellData) {
             if(cellData.includes('jpg')){
                 row.append($('<td>'
+                    +'<a href="../'+ cellData +'" target="_blank">'
                     +'<img class= "image" src="../'+cellData+'" alt="'
-                    +cellData+'"/></div></td>'));
+                    +cellData+'"/></a></div></td>'));
+
             } else if(cellData.split(",").length == 5){
                 hexcolours = convert_to_array(cellData);
                 var colourDiv = $('<td></td>');
@@ -72,8 +90,6 @@ function convert_to_array(data){
     return hexcolours;
 }
 
-
-
 $(window).load(function(){
     // Card View
     var tables = $('.cards-table');
@@ -100,6 +116,8 @@ $(window).load(function(){
             });
         });
     });
+
+    updateResults();
 })
 
 
