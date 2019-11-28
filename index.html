@@ -2,16 +2,21 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" media="all" href="style.css" />
-        <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
+        <link rel="stylesheet" media="all" href="style/style.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-        <script src="script.js"></script>
+        <script src="js/hilitor.js"></script>
     </head>
     <body>
         <div class="searchDiv">
-            <input type="text" id="myInput" placeholder="Search dataset for objects, RGB colours, Faces or Text.." title="Type in a query">
+            <input type="text" id="myInput" placeholder="Search dataset for Objects, Faces or Text, eg TV/Bottle/Person (press enter)" title="Type in a query">
+            <br/><span class="results"></span>
         </div>
+
+        <div class="wrap">
+            <table class="cards-table" id="cards-table">
+            </table>
+          </div>
     </body>
+    <script src="js/card_view_script.js"></script>
 </html>

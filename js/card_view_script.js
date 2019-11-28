@@ -7,7 +7,6 @@ $(function() {
             $(".cards-table > tbody > tr").filter(function() {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
                 myHilitor.apply(value);
-                // highlightText(value);
             });
             updateResults();
         }
@@ -30,7 +29,7 @@ function updateResults(){
 
 $.ajax({
     type: "GET",
-    url: "../test_metadata.csv",
+    url: "../data/test_metadata.csv",
     success: function (data) {
         $('.cards-table').append(tableHeaders(Papa.parse(data).data));
         $('.cards-table').append(tableContents(Papa.parse(data).data));
