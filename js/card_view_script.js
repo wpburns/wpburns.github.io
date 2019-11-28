@@ -31,8 +31,11 @@ $.ajax({
     type: "GET",
     url: "../data/test_metadata.csv",
     success: function (data) {
-        $('.cards-table').append(tableHeaders(Papa.parse(data).data));
+        // $('.cards-table').append(tableHeaders(Papa.parse(data).data));
         $('.cards-table').append(tableContents(Papa.parse(data).data));
+    },
+    complete: function(data) {
+        styleTable();
     }
 });
 
@@ -91,7 +94,7 @@ function convert_to_array(data){
     return hexcolours;
 }
 
-$(window).load(function(){
+function styleTable(){
     // Card View
     var tables = $('.cards-table');
     // Create an array containing all table headers
@@ -119,6 +122,7 @@ $(window).load(function(){
     });
 
     updateResults();
-})
+    console.log("Style Table");
+}
 
 
