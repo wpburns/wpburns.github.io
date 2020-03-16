@@ -27,9 +27,17 @@ function updateResults(){
     $('.results').text($('tr:visible').length + ' Images Found');
 }
 
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
 $.ajax({
     type: "GET",
-    url: "../data/test_metadata.csv",
+    url: "../" + getUrlVars()["id"] + ".csv",
     success: function (data) {
         // $('.cards-table').append(tableHeaders(Papa.parse(data).data));
         $('.cards-table').append(tableContents(Papa.parse(data).data));
