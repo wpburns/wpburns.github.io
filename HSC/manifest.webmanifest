@@ -13,7 +13,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/HSC/index.php",
+  "start_url": "/HSC/contacts.html",
   "background_color": "#ffffff",
   "display": "standalone",
   "theme_color": "#ffffff"
