@@ -100,7 +100,7 @@
 <script>
  if ('serviceWorker' in navigator) {
 	  window.addEventListener('load', function() {
-	    navigator.serviceWorker.register('service-worker.js', {scope: '/HSC/index.php'}).then(function(registration) {
+	    navigator.serviceWorker.register('service-worker.js', {scope: '/HSC/contacts.html'}).then(function(registration) {
 	      // Registration was successful
 	      console.log('ServiceWorker registration successful with scope: ', registration.scope);
 	    }, function(err) {
