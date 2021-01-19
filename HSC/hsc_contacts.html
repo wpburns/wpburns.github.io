@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HSC Trust Contacts</title>
+
+<link rel="manifest" crossorigin="use-credentials" href="manifest.webmanifest"/>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-title" content="Add to Home">
+
+<link rel="shortcut icon" sizes="196x196" href="images/hsc-icon-192.png">
+
+<meta name="apple-mobile-web-app-title" content="Add to Home">
+
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<link href="css/style.css" rel="stylesheet">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/rowreorder/1.2.7/js/dataTables.rowReorder.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script> -->
+
+<link href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet" >
+<link href="https://cdn.datatables.net/rowreorder/1.2.7/css/rowReorder.dataTables.min.css" rel="stylesheet" >
+<link href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.dataTables.min.css" rel="stylesheet" >
+
+<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script src="js/script.js"></script>
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="card-body mx-auto">
+        <img src="images/shsc-logo.png" id="icon" alt="Southern Trust Logo" />
+    </div>
+</div>
+
+<div class="fadeIn">
+<a href="#" class="float-tt">
+    <p>Install</p>
+</a>
+<a href="#" class="float">
+    <i class="fa fa-plus my-float"></i>
+</a>
+</div>
+
+</body>
+
+
+<script>
+ if ('serviceWorker' in navigator) {
+	  window.addEventListener('load', function() {
+	    navigator.serviceWorker.register('service-worker.js', {scope: '/HSC/'}).then(function(registration) {
+	      // Registration was successful
+	      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+	    }, function(err) {
+	      // registration failed :(
+	      console.log('ServiceWorker registration failed: ', err);
+	    });
+	  });
+	}
+
+	let deferredPrompt;
+	var div = document.querySelector('.float');
+	var button = document.querySelector('.float');
+	div.style.display = 'none';
+
+	window.addEventListener('beforeinstallprompt', (e) => {
+	  // Prevent Chrome 67 and earlier from automatically showing the prompt
+	  e.preventDefault();
+	  // Stash the event so it can be triggered later.
+	  deferredPrompt = e;
+	  div.style.display = 'block';
+
+	  button.addEventListener('click', (e) => {
+	  // hide our user interface that shows our A2HS button
+	  div.style.display = 'none';
+	  // Show the prompt
+	  deferredPrompt.prompt();
+	  // Wait for the user to respond to the prompt
+	  deferredPrompt.userChoice
+	    .then((choiceResult) => {
+	      if (choiceResult.outcome === 'accepted') {
+	        console.log('User accepted the A2HS prompt');
+	      } else {
+	        console.log('User dismissed the A2HS prompt');
+	      }
+	      deferredPrompt = null;
+	    });
+	});
+	});
+</script>
+</html>
