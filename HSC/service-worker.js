@@ -3,11 +3,13 @@
 const cacheName = 'cache-v1';
 const precacheResources = [
   '/',
-  'contacts.php',
   'css/style.css',
   'css/bootstrap.min.css',
   'images/shsc-logo.png',
-  'css/font-awesome.min.css'
+  'css/font-awesome.min.css',
+  'fonts/fontawesome-webfont.woff2',
+  'data/contacts.csv',
+  'hsc_contacts.html'
 ];
 
 self.addEventListener('install', event => {
