@@ -8,9 +8,7 @@ const precacheResources = [
   'css/bootstrap.min.css',
   'images/shsc-logo.png',
   'css/font-awesome.min.css',
-  'fonts/fontawesome-webfont.woff2',
-  'data/contacts.csv',
-  'hsc_contacts.html'
+  'fonts/fontawesome-webfont.woff2'
 ];
 
 self.addEventListener('install', event => {
