@@ -1,44 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" media="all" href="style/style.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="js/hilitor.js"></script>
-    </head>
-    <body>
-        <div class="searchDiv">
-            <input type="text" id="myInput" placeholder="Search dataset for Objects, Faces or Text, eg TV/Bottle/Person (press enter)" title="Type in a query">
-            <br/><span class="results"></span>
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>William Burns Consulting Ltd.</title>
+  <meta content="William Burns Consulting Ltd." name="description">
+  <meta content="William Burns, Consulting, Research and Development, Rapid Prototypes" name="keywords">
+
+  <link href="assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/libs/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/libs/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <section id="logo">
+    <div class="logo-container">
+      <a href="index.html" class="logo-logo" data-aos="zoom-in"><img src="assets/img/wbc_logo_white.png" alt=""></a>
+      <h1 data-aos="zoom-in">William Burns Consulting Ltd.</h1>
+      <h2 data-aos="fade-up">Northern Ireland based technology consultancy</h2>
+      <a data-aos="fade-up" href="#about" class="btn-get-started scrollto">Let's Go</a>
+    </div>
+  </section>
+
+  <!-- Header -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container">
+
+      <div class="logo d-block d-lg-none">
+        <a href="index.html">
+          <img src="assets/img/wbc_logo_white.png" alt="" class="img-fluid">
+        </a>
+      </div>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul class="nav-inner">
+          <li><a href="#about">Who We Are</a></li>
+          <li class="nav-logo"><a href="index.html"><img src="assets/img/wbc_logo.png" alt="" class="img-fluid"></a></li>
+          <li><a href="#services">What We Do</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Who We Are</h2>
+          <p>Everything you can imagine is real!</p>
         </div>
 
-        <div class="wrap">
-            <table class="cards-table" id="cards-table">
-                    <thead>
-                        <tr>
-                            <th>Sex</th>
-                            <th>XYZ</th>
-                            <th>Image</th>
-                            <th>Device Model</th>
-                            <th>Image Prediction</th>
-                            <th>Age</th>
-                            <th>Blur</th>
-                            <th>Emotion</th>
-                            <th>Device Timestamp</th>
-                            <th>Colours</th>
-                            <th>Objects</th>
-                            <th>Text</th>
-                            <th>Time</th>
-                            <th>Face Recog</th>
-                            <th>Date</th>
-                            <th>Device Make</th>
-                            <th># of Faces</th>
-                            <th>GPS</th>
-                        </tr>
-                    </thead>
-            </table>
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="image">
+              <img src="assets/img/aboutus.jpg" class="img-fluid" alt="Photo by Headway on Unsplash">
+            </div>
           </div>
-    </body>
-    <script src="js/card_view_script.js"></script>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 ">
+              <h3>William Burns PhD</h3>
+              <p class="font-italic">
+                William has been working in Research &amp; Development since 2007 across the IT industry and academia.
+                His experience encompasses Design and Development of software solutions specifically related to healthcare, in addition to prototyping of wearable electronics and sensor systems.
+              </p>
+              <p>
+                With a career in academic research, William has published over <a href="https://scholar.google.com/citations?user=U8cvaBoAAAAJ&hl=en&oi=ao">40 peer reviewed publications</a>
+                and worked on several European and UK funded research projects and was a member of the Intelesens/Scanadu 2017 Qualcomm Tricorder XPrize team.
+              </p>
+              <ul>
+                <li><i class="bx bx-check-double"></i>HTML/CSS/JS/PHP.</li>
+                <li><i class="bx bx-check-double"></i>Java Development for desktop and Android.</li>
+                <li><i class="bx bx-check-double"></i>Python development for Computer Vision and Data Analytics.</li>
+                <li><i class="bx bx-check-double"></i>Experience with Arduino rapid prototyping platforms.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>What We Do</h2>
+          <p>Over 13 years experience working in IT R&amp;D</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-2 order-lg-1">
+            <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up">
+              <i class="bx bx-code-alt"></i>
+              <h4>Mobile, Desktop and Server-side Development</h4>
+              <p>Developed systems that integrate with peripheral devices such as Bluethooh health monitors as well as ad-hoc devices. Full stack development including API endpoint development, and database management.</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-cube-alt"></i>
+              <h4>Computer Vision</h4>
+              <p>Analysis of quality and context of life-log images, object detection and image quality.</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-analyse"></i>
+              <h4>Rapid Prototyping</h4>
+              <p>Capability to develop rapid end-to-end proof-of-concept systems integrating mobile, backend and visualisation.</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-chat"></i>
+              <h4>Technology Consultation</h4>
+              <p>Experience in developing solutions for specific audiences such as older users with chronic diseases, persons with autism and dementia.</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-line-chart"></i>
+              <h4>Data Analytics</h4>
+              <p>Experience analysing large structured and un-structured datasets for predictive analysis, ranging from email content to Electronic Health Records.</p>
+            </div>
+          </div>
+          <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url("assets/img/services_.jpg");' data-aos="fade-left" data-aos-delay="100" alt="Photo by Paul Calescu on Unsplash"></div>
+        </div>
+
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container footer-bottom clearfix">
+  
+      <div class="copyright">
+        Contact Us: <a href="mailto:info@williamburnsconsulting.co.uk">info@williamburnsconsulting.co.uk</a>
+      </div>
+      
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top">
+    <i class="bx bx-chevron-up"></i>
+  </a>
+
+  <script src="assets/libs/jquery/jquery.min.js"></script>
+  <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/libs/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/libs/jquery-sticky/jquery.sticky.js"></script>
+  <script src="assets/libs/aos/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
